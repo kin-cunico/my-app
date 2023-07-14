@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	width: 100%;
+}
+
+main {
+	background: rgb(22, 22, 22);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	position: relative;
+	color: powderblue;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+}
+
+.faunaHeader {
+	font-size: 2rem;
+	font-weight: bold;
+	letter-spacing: 5px;
+}
+
+.faunaHeader::selection {
+	background-color: powderblue;
+	color: black;
+}
+
+.blog-container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
+	gap: 20px;
+	padding: 20px 10px;
+	height: fit-content;
+	border-bottom: 1px solid powderblue;
+}

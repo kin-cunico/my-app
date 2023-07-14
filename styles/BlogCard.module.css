@@ -1,0 +1,92 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	justify-content: space-between;
+	height: 300px;
+	text-align: center;
+	border-radius: 8px;
+	padding: 0;
+	margin: 0;
+	box-shadow: 1px 1px 20px 4px black;
+}
+
+.card:hover .textsContainer {
+	transition: 1s;
+	bottom: 40px;
+}
+.textsContainer > h2 {
+	transition: 0.5s;
+	border-bottom: none;
+}
+.card:hover .textsContainer > h2 {
+	transition: 0.5s;
+	border-bottom: 1px solid rgb(255, 255, 255);
+	border-bottom-left-radius: 8px;
+}
+
+.imgContainer > img {
+	transition: 0.5s;
+	height: 300px;
+	width: 300px;
+	border-radius: 8px;
+}
+
+.textsContainer {
+	transition: 1s;
+	height: 300px;
+	width: 300px;
+	padding: 5px;
+	box-sizing: border-box;
+	position: absolute;
+	border-radius: 8px;
+	bottom: 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-decoration: none;
+}
+
+.title {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: whitesmoke;
+	text-shadow: 3px 3px 3px black;
+}
+
+.region {
+	color: whitesmoke;
+	text-shadow: 2px 2px 2px black;
+}
+
+.description {
+	transition: 1s;
+	text-align: justify;
+	box-sizing: content-box;
+	font-size: 0.8rem;
+	padding: 10px 5px;
+	color: whitesmoke;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.tag {
+	padding: 2px 5px;
+	width: fit-content;
+	align-self: center;
+	color: whitesmoke;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card:hover .description {
+	transition: 1s;
+	visibility: visible;
+	opacity: 100;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-radius: 5px;
+}
+
+.card:hover img {
+	scale: 110%;
+	transition: 0.5s;
+}

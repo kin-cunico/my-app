@@ -1,0 +1,28 @@
+.parentContainer {
+	display: grid;
+	padding: 20px 10px 20px 10px;
+	box-sizing: border-box;
+}
+.blogContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+	height: 100vh;
+}
+.img {
+	overflow: hidden;
+}
+.content {
+	display: flex;
+	align-items: center;
+	color: black;
+	justify-content: justify;
+}
+
+.title {
+	color: black;
+	font-size: 1.5rem;
+	font-weight: bold;
+}

@@ -1,0 +1,47 @@
+.navbar {
+	width: 100%;
+	color: powderblue;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-around;
+	border-bottom: 1px solid powderblue;
+	flex-wrap: wrap;
+	align-items: center;
+	background-color: rgb(22, 22, 22);
+}
+.h1 {
+	transition: 0.5s;
+	font-weight: bolder;
+	font-size: 2.5rem;
+	color: powderblue;
+}
+
+.h1:hover {
+	transition: 0.5s;
+	color: rgba(176, 224, 230, 0.5);
+}
+.linkList {
+	display: flex;
+	flex-wrap: wrap;
+	width: 50%;
+	align-items: end;
+}
+
+.link {
+	transition: 0.5s;
+	box-sizing: content-box;
+	display: flex;
+	flex-direction: column;
+	width: 120px;
+	height: 120px;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+}
+
+.link:hover {
+	cursor: pointer;
+	transition: 0.5s;
+	background-color: powderblue;
+	color: black;
+}

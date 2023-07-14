@@ -1,0 +1,10 @@
+.title_main {
+	background: black;
+	text-align: center;
+}
+
+.authorPosts {
+	width: 360px;
+	height: 100vh;
+	background: blue;
+}
