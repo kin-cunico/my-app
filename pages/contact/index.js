@@ -35,6 +35,20 @@ const Index = () => {
 	});
 	return (
 		<>
+			<head>
+				<meta
+					property="og:title"
+					content="Luminae World Wikia"
+				/>
+				<meta
+					property="og:description"
+					content="A fantasy world that lives within the habitable zone of twin stars"
+				/>
+				<meta
+					property="og:immage"
+					content="public/Luminae.jpg"
+				/>
+			</head>
 			<Navbar />{" "}
 			<form
 				method="POST"
