@@ -11,7 +11,7 @@ export default function BlogPost({
 }) {
 	return (
 		<main className={styles.card}>
-			<Link href={"/faunas/" + slug}>
+			<Link href={"/floras/" + slug}>
 				<div className={styles.imgContainer}>
 					<Image
 						loader={() => image.url}

@@ -1,28 +1,54 @@
-.parentContainer {
-	display: grid;
-	padding: 20px 10px 20px 10px;
-	box-sizing: border-box;
-}
 .blogContainer {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	gap: 10px;
 	align-items: center;
-	gap: 30px;
-	height: 100vh;
+	justify-content: space-around;
+	padding: 10px 40px 35px 40px;
+	color: whitesmoke;
 }
-.img {
+
+.imgContainer {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	border-radius: 8px;
+	align-items: center;
 	overflow: hidden;
 }
-.content {
+
+.imgContainer:hover .img {
+	transition: 1s;
+	overflow: hidden;
+	transform: scale(110%);
+}
+
+.textContainer {
+	width: 500px;
+	height: 500px;
+	padding: 0px 20px;
 	display: flex;
-	align-items: center;
-	color: black;
-	justify-content: justify;
+	flex-direction: column;
+	gap: 10px;
+	align-items: left;
+	justify-content: space-around;
+	border-radius: 8px;
 }
 
 .title {
-	color: black;
-	font-size: 1.5rem;
+	color: palevioletred;
+	font-size: 2rem;
 	font-weight: bold;
+	font-family: "Shadows Into Light", cursive;
+}
+
+.region {
+	color: whitesmoke;
+}
+
+.region span {
+	color: red;
+}
+
+.description {
+	text-align: justify;
 }

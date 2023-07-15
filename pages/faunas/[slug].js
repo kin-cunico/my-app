@@ -1,8 +1,8 @@
 import { GraphQLClient, gql } from "graphql-request";
 import styles from "../../styles/blog-card.module.css";
 import Image from "next/image";
-import Head from "next/head";
-import astToHtmlString from "@graphcms/rich-text-types";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 //REMEMBER TO CHANGE BACK TO DOTENV API_KEY
 const graphcms = new GraphQLClient(
@@ -12,26 +12,26 @@ const graphcms = new GraphQLClient(
 //querying data from our cms from specific post that matches the slug url;
 const QUERY = gql`
 	query Fauna($slug: String!) {
-		faunas {
+		fauna(where: { slug: $slug }) {
 			id
 			name
 			image {
 				url
-				createdBy {
-					name
-					picture
-				}
 			}
 			tag
+			slug
 			region
 			publishedAt
-			slug
 			authors {
 				name
 				slug
 				authorPhoto {
 					url
 				}
+			}
+			region
+			description {
+				html
 			}
 		}
 	}
@@ -57,7 +57,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
 	const slug = params.slug;
-
 	const data = await graphcms.request(QUERY, { slug });
 	const fauna = data.fauna;
 
@@ -71,38 +70,35 @@ export async function getStaticProps({ params }) {
 
 export default function BlogPost({ fauna }) {
 	return (
-		<div className={styles.parentContainer}>
-			<Head>
-				<title>Curious Humans</title>
-			</Head>
-			<nav>
-				<Image
-					src="/"
-					alt="logo"
-					width={50}
-					height={50}
-				/>
-				<ul className="nav-list">
-					<li className="list-item">HOME</li>
-					<li className="list-item">ABOUT</li>
-					<li className="list-item">DONATE</li>
-				</ul>
-			</nav>
+		<>
+			<Navbar target="_blank" />
 			<main className={styles.blogContainer}>
-				<Image
-					loader={() => fauna.coverImage.url}
-					src={fauna.image.url}
-					className={styles.img}
-					width={700}
-					height={400}
-					alt="fauna image"
-				/>
-				<h1 className={styles.title}>{fauna.title}</h1>
-				<div
-					className={styles.content}
-					dangerouslySetInnerHTML={{ __html: fauna.content.html }}
-				></div>
+				<div className={styles.imgContainer}>
+					<Image
+						loader={() => fauna.image.url}
+						src={fauna.image.url}
+						className={styles.img}
+						alt={`${fauna.name} image`}
+						width={620}
+						height={820}
+					/>
+				</div>
+				<div className={styles.textContainer}>
+					<h1 className={styles.title}>{fauna.name}</h1>
+					<h4 className={styles.region}>
+						Region found: <span>{fauna.region}</span>
+					</h4>
+					<div
+						className={styles.description}
+						dangerouslySetInnerHTML={{ __html: fauna.description.html }}
+					></div>
+					<section>
+						<p>Author: {fauna.authors[0].name}</p>
+						<p>Date created: {fauna.publishedAt}</p>
+					</section>
+				</div>
 			</main>
-		</div>
+			<Footer />
+		</>
 	);
 }

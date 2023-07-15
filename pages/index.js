@@ -2,6 +2,7 @@ import Image from "next/image";
 import Head from "next/head";
 import { GraphQLClient, gql } from "graphql-request";
 import BlogPost from "@/components/BlogCard";
+import BlogFlora from "@/components/BlogFlora";
 import Navbar from "@/components/Navbar";
 import Map from "@/components/Map";
 import Footer from "@/components/Footer";
@@ -115,7 +116,7 @@ export default function Home({ faunas, floras }) {
 					{floras.map((flora) => (
 						//mapping our data from the cms and passing it to our blog container
 
-						<BlogPost
+						<BlogFlora
 							title={flora.name}
 							image={flora.image.url}
 							key={flora.id}

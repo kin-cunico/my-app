@@ -26,13 +26,13 @@ const Navbar = () => {
 				<Link href="/">
 					<li className={styles.link}>HOME</li>
 				</Link>
-				<Link href="#fauna">
+				<Link href="/#fauna">
 					<li className={styles.link}>FAUNA</li>
 				</Link>
-				<Link href="#flora">
+				<Link href="/#flora">
 					<li className={styles.link}>FLORA</li>
 				</Link>
-				<Link href="#map">
+				<Link href="/#map">
 					<li className={styles.link}>MAP</li>
 				</Link>
 				<Link
